@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/usercpanel/public_html/api-template
+- /bin/cp -r * $DEPLOYPATH
