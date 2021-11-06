@@ -23,6 +23,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [App\Http\Controllers\API\AuthController::class, 'logout']);
 });
 
-Route::post('/register', [App\Http\Controllers\API\AuthController::class, 'register']);
-//API route for login user
-Route::post('/login', [App\Http\Controllers\API\AuthController::class, 'login']);
+Route::post('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store']);
+Route::post('/login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']);
+Route::post('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store']);
+Route::get('/login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create']);
+Route::post('/reset-password', [App\Http\Controllers\Auth\NewPasswordController::class, 'store']);

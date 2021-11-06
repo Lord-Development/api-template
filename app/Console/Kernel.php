@@ -24,8 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('artisan migrate')->everyfiveMinutes();
-        $schedule->command('artisan serve')->everyfiveMinutes();
+        // $schedule->command('inspire')->hourly();
     }
 
     /**
